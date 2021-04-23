@@ -36,7 +36,7 @@ ng serve
 
 ## Entrega:
 
-- Criar um repositório público do github com esse código, no Readme responder as perguntas abaixo e nos enviar o link
+- Criar um repositório público no github ou bitbucket com esse código e nos enviar o link
 
 ## Extras (opcional): 
 - Telas responsivas
