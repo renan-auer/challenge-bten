@@ -9,6 +9,7 @@ Criar um site web utilizando angular 11 e node.js, com os seguintes requisitos:
 - Tela de Dashboard com gráficos em tela logada (dados mockados, pegando do backend)
 - API de login
 - API CRUD de usuário
+- Integrando o client com server através de APIs
 
 ## Exemplo de tela logada
 Somente um exemplo, não precisa ser necessariamente igual
@@ -18,6 +19,8 @@ Somente um exemplo, não precisa ser necessariamente igual
 
 ## Iniciando Server:
 
+- Configurar .env de acordo com .env-example
+
 ```sh
 cd server
 yarn
@@ -25,8 +28,6 @@ yarn dev
 ```
 
 ## Iniciando Client:
-
-- Configurar .env de acordo com .env-example
 
 ```sh
 cd client
