@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-label {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #8c8c8c;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.btn-bten {
+  color: #fff;
+  background-color: #00797d;
+  border-color: #00585a;
+}
+
+.btn-bten:hover {
+  color: #fff;
+  background-color: #006063;
+  border-color: #004041;
+}
+
+.title {
+  font-size: 24px;
+  color: #00797d;
+  text-transform: uppercase;
+}
