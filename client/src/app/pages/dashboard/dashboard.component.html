@@ -1,1 +1,73 @@
-<p>dashboard works!</p>
+<nav-bar></nav-bar>
+
+<div class="page-content p-5" id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Dashboard</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-3 mb-2">
+        <div class="card shadow">
+          <div class="card-body card-info blue-card">
+            <div class="description">VENDAS</div>
+            <div class="value">234</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 mb-2">
+        <div class="card shadow">
+          <div class="card-body card-info green-card">
+            <div class="description">NOVOS CLIENTES</div>
+            <div class="value">14</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 mb-2">
+        <div class="card shadow">
+          <div class="card-body card-info red-card">
+            <div class="description">DEVOLUÇÕES</div>
+            <div class="value">12</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 mb-2">
+        <div class="card shadow">
+          <div class="card-body card-info blue2-card">
+            <div class="description">LUCRO</div>
+            <div class="value">R$ 23344,20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-12 col-md-5">
+        <div class="card shadow graph-card">
+          <div class="card-header">
+            Vendas
+          </div>
+          <div class="card-body">
+            <canvas id="chartVendas" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 offset-md-2 col-md-5">
+        <div class="card shadow graph-card">
+          <div class="card-header">
+            Clientes
+          </div>
+          <div class="card-body">
+            <canvas id="chartClientes" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
