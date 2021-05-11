@@ -1,0 +1,23 @@
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+.icon-menu {
+  font-size: 20px;
+  margin-right: 0.8em;
+  width: 0.8em;
+  text-align: center;
+  color: #6c6c6c;
+}
