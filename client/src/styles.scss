@@ -13,7 +13,7 @@ body {
 .custom-label {
   margin-bottom: 0;
   font-size: 16px;
-  color: #8c8c8c;
+  color: #6e6e6e;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -34,4 +34,28 @@ body {
   font-size: 24px;
   color: #00797d;
   text-transform: uppercase;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+  height: 100%;
+  background-color: #e5e5e5;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
 }

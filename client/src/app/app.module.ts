@@ -10,6 +10,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SigninService } from './pages/signin/signin.service';
 import { UsersComponent } from './pages/users/users.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     SigninComponent,
     DashboardComponent,
     UsersComponent,
-    NavBarComponent
+    NavBarComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule,
