@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js'
+import { DashboardService } from 'src/app/services/dashboard-service';
 Chart.register(...registerables);
 
 @Component({
@@ -9,22 +10,49 @@ Chart.register(...registerables);
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.setSalesGraph()
-    this.setClientGraph()
+  dataCards = {
+      vendas: 0,
+      clientes: 0,
+      devolucoes: 0,
+      lucro: 'R$ 0',
   }
 
-  setSalesGraph() {
+  constructor(
+    private dashboardService: DashboardService
+  ) { }
+
+  ngOnInit(): void {
+    this.getDataCards()
+    this.getSalesGraph()
+    this.getClientGraph()
+  }
+
+  getDataCards() {
+    this.dashboardService.getDataCharts().subscribe( (data : any)=> {
+      this.dataCards = data
+    })
+  }
+
+  getSalesGraph() {
+    this.dashboardService.getSalesGraph().subscribe( (data : any)=> {
+      this.setSalesGraph(data)
+    })
+  }
+
+  getClientGraph() {
+    this.dashboardService.getClientGraph().subscribe( (data : any)=> {
+      this.setClientGraph(data)
+    })
+  }
+
+  setSalesGraph(data: any) {
     var ctxVendas : any = document.getElementById('chartVendas');
     var myChartVendas = new Chart(ctxVendas.getContext('2d'), {
       type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: data.map((e: any) => e.label),
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          data: data.map((e: any) => e.value),
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -49,20 +77,20 @@ export class DashboardComponent implements OnInit {
           y: {
             beginAtZero: true
           }
-        }
+        },
       }
     });
   }
 
-  setClientGraph() {
+  setClientGraph(data: any) {
     var ctxClient : any = document.getElementById('chartClientes');
     var myChartClient = new Chart(ctxClient.getContext('2d'), {
       type: 'line',
       data: {
-        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        labels: data.map((e: any) => e.label),
         datasets: [{
           label: 'My First Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
+          data: data.map((e: any) => e.value),
           fill: false,
           borderColor: 'rgb(75, 192, 192)',
           tension: 0.1
