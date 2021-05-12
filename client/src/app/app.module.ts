@@ -11,6 +11,9 @@ import { SigninService } from './pages/signin/signin.service';
 import { UsersComponent } from './pages/users/users.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './services/user-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,15 @@ import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usua
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [
-    SigninService
+    SigninService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
