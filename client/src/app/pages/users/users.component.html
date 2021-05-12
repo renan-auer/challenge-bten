@@ -20,6 +20,7 @@
               <table class="table table-stripped table-hover table-borded">
                 <thead>
                   <tr>
+                    <th>ID</th>
                     <th>Nome</th>
                     <th>Idade</th>
                     <th>Altura</th>
@@ -27,13 +28,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Teste</td>
-                    <td>Teste</td>
-                    <td>Teste</td>
+                  <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.name}}</td>
                     <td class="btn-group">
-                      <a  routerLink="/edit-user/1" class="btn btn-outline-info">  Editar</a>
-                      <button class="btn btn-outline-danger">Deletar</button>
+                      <a  routerLink="/edit-user/{{user.id}}" class="btn btn-outline-info">  Editar</a>
+                      <button (click)="delete(user.id)" class="btn btn-outline-danger">Deletar</button>
                     </td>
                   </tr>
                 </tbody>
