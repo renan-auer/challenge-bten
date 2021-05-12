@@ -30,7 +30,8 @@ class UserService {
       await userRepository.update(userId, user);
 
       const updatedUser: User = await userRepository.findOne(userId);
-
+      console.log(userId);
+      console.log(updatedUser);
       return updatedUser;
     } catch (error) {
       console.error(error);

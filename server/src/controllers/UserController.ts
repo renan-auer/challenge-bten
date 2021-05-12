@@ -47,6 +47,11 @@ class UserController {
       const { userId = null } = req.params;
       if (!userId) return res.status(400).json({ error: 'UserId is missing' });
 
+      if (req.body.password !== req.body.confPassword) {
+        return res.status(400).json({ error: 'Confirmation password is wrong' });
+      }
+      delete req.body.confPassword;
+
       const user: User = await UserService.updateUser(userId, req.body);
       if (!user) return res.status(404).json({ error: 'User not found' });
 
