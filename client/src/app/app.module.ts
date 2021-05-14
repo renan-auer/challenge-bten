@@ -13,7 +13,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user-service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from './services/interceptor.service';
+import { AuthService } from './services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -34,8 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule
   ],
   providers: [
+    AuthService,
     SigninService,
-    UserService
+    UserService,
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

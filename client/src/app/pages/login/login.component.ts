@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { LoginService } from '../../services/login-service';
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { 
     this.formulario = this.formBuilder.group({})
   }
@@ -37,8 +39,9 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = true
     if (this.formulario.invalid)
       return
-
-    this.loginService.login(form.name, form.password).subscribe(data => {
+    this.loginService.login(form.name, form.password).subscribe((data: any) => {
+      console.log(data)
+      this.authService.autentica(data.token)
       this.router.navigate([''])
     }, error => {
       alert('Nome e/ou senha inválidos')

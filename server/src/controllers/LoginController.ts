@@ -13,7 +13,7 @@ class LoginController {
       const userDB: User = await LoginService.auth(user.name, user.password);
 
       if (userDB) {
-        const token = jwt.sign({ name: userDB.name }, 'secreKey');
+        const token = jwt.sign({ name: userDB.name }, process.env.JWTSECRET);
         return res.status(200).json({ token });
       }
       return res.status(401).json('Unauthorized');
