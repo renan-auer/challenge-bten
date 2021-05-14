@@ -1,0 +1,19 @@
+{
+  "name": "challenge-bten",
+  "version": "1.0.0",
+  "description": "Criar um site web utilizando angular 11 e node.js, com os seguintes requisitos:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renan-auer/challenge-bten.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renan-auer/challenge-bten/issues"
+  },
+  "homepage": "https://github.com/renan-auer/challenge-bten#readme"
+}
