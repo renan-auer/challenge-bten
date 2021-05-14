@@ -4,7 +4,8 @@
   "description": "Criar um site web utilizando angular 11 e node.js, com os seguintes requisitos:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd client && ng serve"
   },
   "repository": {
     "type": "git",
